@@ -1,0 +1,221 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+      margin: 0;
+      color: #fff; 
+      font-family: Source Sans Pro, sans-serif;
+      font-weight: 400;
+      font-size: 0.8571428571428571rem;
+      line-height: 1.5;
+      background-color: #0d1414;
+  }
+
+  /* main container – replicates the clean card from the screenshot */
+  .cms-container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  /* HEADER exactly as template */
+  .main-headline h1 {
+    font-size: 3.4rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: #2f2621;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #eddacb;
+    padding-bottom: 1rem;
+  }
+
+  .intro-text {
+    font-size: 1.22rem;
+    color: #7f8383;
+    margin: 1.2rem 0 0 0;
+    max-width: 100%;
+  }
+
+  /* two-column layout: left text / right "PERFECT EGG" card */
+  .content-row {
+    display: grid;
+    grid-template-columns: 1fr 0.85fr;
+    gap: 1rem;
+    margin: 3rem 0 2.5rem;
+  }
+
+  .interview-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+  }
+
+  @media (max-width: 750px) {
+    .content-row { grid-template-columns: 1fr; }
+    .interview-block { grid-template-columns: 1fr; }
+  }
+
+  /* left column interview paragraphs */
+  .interview-block p {
+    font-size: 1.15rem;
+    margin-bottom: 1.5rem;
+    color: #3f3731;
+  }
+
+  .interview-block p:first-of-type:first-letter {
+    font-size: 4.2rem;
+    float: left;
+    padding: 0.2rem 0.7rem 0 0;
+    line-height: 0.8;
+    color: #b28b74;
+    font-weight: 500;
+  }
+
+  /* RIGHT CARD — exactly as screenshot: THE PERFECT EGG */
+  .perfect-egg-card h1 {
+      font-size: 32px;
+      font-weight: 300;
+      line-height: 1.2;
+      color: #d0d1d5;
+      border-bottom: 0.1rem solid #7f8383;
+      text-transform: uppercase;
+      line-height: 2.5rem;
+  }
+
+  .temp-badge {
+    display: inline-block;
+    margin: 0.8rem 0 0.3rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #cf1430;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+  }
+
+  .temp-badge span {
+    font-weight: 700;
+    color: #b4512e;
+  }
+
+  .temp-description {
+    font-size: 1.15rem;
+    color: #fff;
+    margin: 0.8rem 0 1.2rem;
+    font-style: italic;
+  }
+
+  /* TASTE OF THE COLOURS — three cards */
+  .colour-zone {
+    margin: 3.5rem 0 1.5rem;
+    padding-top: 2.8rem;
+  }
+
+  .colour-zone h3 {
+    font-size: 2.2rem;
+    font-weight: 400;
+    margin-bottom: 2.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: center;
+    text-decoration: underline;
+    text-underline-offset: 1.2rem;
+    text-decoration-color: #7f8383;
+  }
+
+  .card-trio {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+  }
+
+  .flavour-card {
+    flex: 1 1 200px;
+    text-align: center;
+    transition: 0.15s;
+  }
+
+  .flavour-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .flavour-card h4 {
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+  }
+
+  .flavour-card p {
+    font-size: 1rem;
+    color: #7f8383;
+    line-height: 1.5;
+  }
+
+  /* MULTIPLE MODALS — one per image */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(15, 10, 8, 0.9);
+    backdrop-filter: blur(6px);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 2rem;
+  }
+
+  .modal-overlay.active {
+    display: flex;
+  }
+
+  .modal-content-box {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    overflow: hidden;
+  }
+
+  .modal-content-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 15px; right: 20px;
+    font-size: 3.5rem;
+    color: white;
+    cursor: pointer;
+    width: 55px; height: 55px;
+    background: #1f1a16b3;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 200;
+    line-height: 1;
+    transition: 0.15s;
+  }
+
+  .modal-close:hover {
+    background: #f0daca;
+    color: #2b1f1a;
+  }
+
+  .modal-title {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: white;
+    font-size: 1.8rem;
+    text-shadow: 2px 2px 4px black;
+    background: rgba(0,0,0,0.5);
+    padding: 1rem;
+  }

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orchard - cooking · taste of the colours · perfect egg</title>
+  <!-- SEO meta (exactly matching the design's content) -->
+  <meta name="description" content="What does cooking mean? Cooking, father of molecular gastronomy, reveals the perfect egg (67–67°C) and how colours shape taste.">
+  <meta name="keywords" content="molecular gastronomy, perfect egg, taste of colours, cooking science">
+  <!-- Open Graph / social (SEO) -->
+  <meta property="og:title" content="What does cooking mean?">
+  <meta property="og:description" content="What does cooking mean? Cooking, father of molecular gastronomy, reveals the perfect egg (67–67°C) and how colours shape taste.">
+  <meta property="og:image" content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%23e3d6cc'/%3E%3Ctext x='190' y='250' font-family='Source Sans Pro, sans-serif' font-size='48' fill='%2358453a'%3E🥚 perfect egg%3C/text%3E%3C/svg%3E">
+  <!-- exact design style – pure CSS3, no external fonts, clean -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="cms-container">
+    <div class="content-row">
+      <section class="interview-block">
+        <div>
+        <img src="./images/cook.png" class="design-figure clickableFigure" data-modal="modal1" width="100%">
+        </div>
+        <div>
+        <img src="./images/experiment.png" class="design-figure clickableFigure" data-modal="modal1" width="100%">
+        <img src="./images/eggs.png" class="design-figure clickableFigure" data-modal="modal1" width="100%">
+        </figure>
+        </div>
+      </section>
+
+      <!-- right side: THE PERFECT EGG text and WHAT DOES COOKING MEAN? -->
+      <aside class="perfect-egg-card">
+         <h1 itemprop="name">WHAT DOES COOKING MEAN?</h1>
+        <div class="intro-text" itemprop="description">
+            is it simply applying heat to a food product? A way of making certain food safe to eat? Or a way to create flavour and make food more appealing? This is just part of what Herve This, the father of molecular gastronomy, has dedicated his life to finding out. We spoke to him to find out what his experiments have told him. And in the process even discovered the secrets to cooking the perfect egg...
+        </div>
+        <div style="margin-top: 1rem;">
+            <button class="temp-badge">
+                The perfect egg
+            </button>
+            <div class="temp-description">
+                Keep water between 67 and 67°C for a flavourful, tender yolk
+            </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- TASTE OF THE COLOURS section with 3 clickable cards -->
+    <section class="colour-zone">
+      <h3>TASTE OF THE COLOURS</h3>
+      <div class="card-trio">
+        <!-- RED - clickable -->
+        <article class="flavour-card clickableFigure" data-modal="modal4" style="cursor: pointer;">
+          <!-- <div class="color-spot spot-red" aria-label="red"></div> -->
+          <img src="./images/red.png" class="design-figure" width="100%">
+          <h4>Red</h4>
+          <p>Red foods remind us of berries and soft, so we anticipate a sweet test.</p>
+        </article>
+        <!-- GREEN - clickable -->
+        <article class="flavour-card clickableFigure" data-modal="modal5" style="cursor: pointer;">
+          <!-- <div class="color-spot spot-green" aria-label="green"></div> -->
+           <img src="./images/green.png" class="design-figure" width="100%">
+          <h4>Green</h4>
+          <p>Fresh, zingy green colours are reminiscent of unripe fruit, promosing sour or acid flavours.</p>
+        </article>
+        <!-- WHITE - clickable -->
+        <article class="flavour-card clickableFigure" data-modal="modal6" style="cursor: pointer;">
+          <!-- <div class="color-spot spot-white" aria-label="white"></div> -->
+           <img src="./images/white.png" class="design-figure" width="100%">
+          <h4>White</h4>
+          <p>White foods evoke memories of salt and salty flavours, driving the expectation of a savoury treat.</p>
+        </article>
+      </div>
+    </section>
+
+    <footer class="cms-footer-note">
+    </footer>
+  </div>
+
+  
+  <!-- Modal 1: Cook -->
+  <div id="modal1" class="modal-overlay" role="dialog" aria-modal="true" aria-label="image zoom">
+    <div class="modal-content-box">
+      <span class="modal-close close-modal">&times;</span>
+      <img src="./images/cook.png" alt="Hervé This portrait">
+    </div>
+  </div>
+
+  <!-- Modal 2: Experiment -->
+  <div id="modal2" class="modal-overlay" role="dialog" aria-modal="true" aria-label="image zoom">
+    <div class="modal-content-box">
+      <span class="modal-close close-modal">&times;</span>
+      <img src="./images/experiment.png" alt="Hervé This portrait">
+    </div>
+  </div>
+
+  <!-- Modal 3: Perfect egg -->
+  <div id="modal3" class="modal-overlay" role="dialog" aria-modal="true" aria-label="image zoom">
+    <div class="modal-content-box">
+      <span class="modal-close close-modal">&times;</span>
+      <img src="./images/eggs.png" alt="Hervé This portrait">
+    </div>
+  </div>
+
+  <!-- Modal 4: Red -->
+  <div id="modal4" class="modal-overlay" role="dialog" aria-modal="true" aria-label="image zoom">
+    <div class="modal-content-box">
+      <span class="modal-close close-modal">&times;</span>
+        <img src="./images/red.png" class="design-figure" width="100%">
+        <div class="modal-title">Red foods remind us of berries and soft, so we anticipate a sweet test.</div>
+    </div>
+  </div>
+
+  <!-- Modal 5: Green -->
+  <div id="modal5" class="modal-overlay" role="dialog" aria-modal="true" aria-label="image zoom">
+    <div class="modal-content-box">
+      <span class="modal-close close-modal">&times;</span>
+        <img src="./images/green.png" class="design-figure" width="100%">
+        <div class="modal-title">Fresh, zingy green colours are reminiscent of unripe fruit, promosing sour or acid flavours.</div>
+    </div>
+  </div>
+
+  <!-- Modal 6: White -->
+  <div id="modal6" class="modal-overlay" role="dialog" aria-modal="true" aria-label="image zoom">
+    <div class="modal-content-box">
+      <span class="modal-close close-modal">&times;</span>
+        <img src="./images/white.png" class="design-figure" width="100%">
+        <div class="modal-title">White foods evoke memories of salt and salty flavours, driving the expectation of a savoury treat.</div>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      // Get all clickable elements with class 'clickableFigure'
+      const triggers = document.querySelectorAll('.clickableFigure');
+      
+      // Get all close buttons
+      const closeButtons = document.querySelectorAll('.close-modal');
+      
+      // Get all modals
+      const modals = document.querySelectorAll('.modal-overlay');
+
+      // Function to open specific modal
+      function openModal(modalId) {
+        const modal = document.getElementById(modalId);
+        if (modal) {
+          modal.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        }
+      }
+
+      // Function to close specific modal
+      function closeModal(modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      // Add click event to each trigger
+      triggers.forEach(trigger => {
+        trigger.addEventListener('click', function(e) {
+          e.preventDefault();
+          const modalId = this.getAttribute('data-modal');
+          if (modalId) {
+            openModal(modalId);
+          }
+        });
+      });
+
+      // Add click event to each close button
+      closeButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+          e.stopPropagation();
+          // Find parent modal and close it
+          const modal = this.closest('.modal-overlay');
+          if (modal) {
+            closeModal(modal);
+          }
+        });
+      });
+
+      // Close modal when clicking outside content
+      modals.forEach(modal => {
+        modal.addEventListener('click', function(e) {
+          if (e.target === this) {
+            closeModal(this);
+          }
+        });
+      });
+
+      // Close modal with Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          const openModal = document.querySelector('.modal-overlay.active');
+          if (openModal) {
+            closeModal(openModal);
+          }
+        }
+      });
+
+    })();
+  </script>
+</body>
+</html>
