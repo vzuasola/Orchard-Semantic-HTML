@@ -11,22 +11,22 @@
   <meta property="og:title" content="What does cooking mean?">
   <meta property="og:description" content="What does cooking mean? Cooking, father of molecular gastronomy, reveals the perfect egg (67–67°C) and how colours shape taste.">
   <meta property="og:image" content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%23e3d6cc'/%3E%3Ctext x='190' y='250' font-family='Source Sans Pro, sans-serif' font-size='48' fill='%2358453a'%3E🥚 perfect egg%3C/text%3E%3C/svg%3E">
-  <link rel="shortcut icon" type="image/png" href="./images/favicon.ico" sizes="32x32">
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="shortcut icon" type="image/png" href="./src/assets/images/favicon.ico" sizes="32x32">
+  <link rel="stylesheet" href="./src/assets/css/main.css">
 </head>
 <body>
-  <div class="cms-container">
+  <!-- Using <main> to wrap the primary content of the page -->
+  <main class="cms-container">
     <div class="content-row">
       <section class="interview-block" id="interviewGallery">
         <div>
-          <img src="./images/cook.png" class="gallery-img" data-index="0" width="100%" alt="cook">
+          <img src="./src/assets/images/cook.png" class="gallery-img" data-index="0" width="100%" alt="cook">
         </div>
         <div>
-          <img src="./images/experiment.png" class="gallery-img" data-index="1" width="100%" alt="experiment">
-          <img src="./images/eggs.png" class="gallery-img" data-index="2" width="100%" alt="eggs" style="margin-top: 0.5rem;">
+          <img src="./src/assets/images/experiment.png" class="gallery-img" data-index="1" width="100%" alt="experiment">
+          <img src="./src/assets/images/eggs.png" class="gallery-img" data-index="2" width="100%" alt="eggs" style="margin-top: 0.5rem;">
         </div>
       </section>
-
       <aside class="perfect-egg-card">
          <h1 itemprop="name">WHAT DOES COOKING MEAN?</h1>
         <div class="intro-text" itemprop="description">
@@ -48,23 +48,23 @@
       <h3>TASTE OF THE COLOURS</h3>
       <div class="card-trio">
         <article class="flavour-card clickableFigure" data-modal="modal4" style="cursor: pointer;">
-          <img src="./images/red.png" class="design-figure" width="100%" alt="red">
+          <img src="./src/assets/images/red.png" class="design-figure" width="100%" alt="red">
           <h4>Red</h4>
           <p>Red foods remind us of berries and soft, so we anticipate a sweet test.</p>
         </article>
         <article class="flavour-card clickableFigure" data-modal="modal5" style="cursor: pointer;">
-           <img src="./images/green.png" class="design-figure" width="100%" alt="green">
+           <img src="./src/assets/images/green.png" class="design-figure" width="100%" alt="green">
           <h4>Green</h4>
           <p>Fresh, zingy green colours are reminiscent of unripe fruit, promosing sour or acid flavours.</p>
         </article>
         <article class="flavour-card clickableFigure" data-modal="modal6" style="cursor: pointer;">
-           <img src="./images/white.png" class="design-figure" width="100%" alt="white">
+           <img src="./src/assets/images/white.png" class="design-figure" width="100%" alt="white">
           <h4>White</h4>
           <p>White foods evoke memories of salt and salty flavours, driving the expectation of a savoury treat.</p>
         </article>
       </div>
     </section>
-  </div>
+  </main>
 
   <!-- LIGHTBOX GALLERY for interview images -->
   <div id="interviewLightbox" class="lightbox-overlay">
@@ -81,7 +81,7 @@
   <div id="modal4" class="modal-overlay" role="dialog" aria-modal="true" aria-label="image zoom">
     <div class="modal-content-box">
       <span class="modal-close close-modal">&times;</span>
-        <img src="./images/red.png" class="design-figure" alt="red">
+        <img src="./src/assets/images/red.png" class="design-figure" alt="red">
         <div class="modal-title">Red foods remind us of berries and soft, so we anticipate a sweet test.</div>
     </div>
   </div>
@@ -89,7 +89,7 @@
   <div id="modal5" class="modal-overlay" role="dialog" aria-modal="true" aria-label="image zoom">
     <div class="modal-content-box">
       <span class="modal-close close-modal">&times;</span>
-        <img src="./images/green.png" class="design-figure" alt="green">
+        <img src="./src/assets/images/green.png" class="design-figure" alt="green">
         <div class="modal-title">Fresh, zingy green colours are reminiscent of unripe fruit, promosing sour or acid flavours.</div>
     </div>
   </div>
@@ -97,223 +97,10 @@
   <div id="modal6" class="modal-overlay" role="dialog" aria-modal="true" aria-label="image zoom">
     <div class="modal-content-box">
       <span class="modal-close close-modal">&times;</span>
-        <img src="./images/white.png" class="design-figure" alt="white">
+        <img src="./src/assets/images/white.png" class="design-figure" alt="white">
         <div class="modal-title">White foods evoke memories of salt and salty flavours, driving the expectation of a savoury treat.</div>
     </div>
   </div>
-
-  <script>
-    (function() {
-      const galleryImages = document.querySelectorAll('.interview-block .gallery-img');
-      const lightbox = document.getElementById('interviewLightbox');
-      const lightboxImg = lightbox.querySelector('.lightbox-image');
-      const lightboxCounter = lightbox.querySelector('.lightbox-counter');
-      const closeBtn = lightbox.querySelector('.lightbox-close');
-      const prevBtn = lightbox.querySelector('.lightbox-nav.prev');
-      const nextBtn = lightbox.querySelector('.lightbox-nav.next');
-      
-      let currentIndex = 0;
-      const imageSources = [];
-  
-      galleryImages.forEach((img, index) => {
-        imageSources.push(img.src);
-
-        img.addEventListener('click', function(e) {
-          e.preventDefault();
-          currentIndex = parseInt(this.getAttribute('data-index'));
-          openLightbox(currentIndex);
-        });
-      });
-
-      function openLightbox(index) {
-        if (imageSources.length === 0) return;
-        
-        currentIndex = index;
-        lightboxImg.src = imageSources[currentIndex];
-        updateCounter();
-        lightbox.classList.add('active');
-        document.body.style.overflow = 'hidden';
-
-        document.body.style.position = 'fixed';
-        document.body.style.width = '100%';
-
-        console.log('interview-block image clicked - gallery opened, image index:', currentIndex);
-      }
-
-      function closeLightbox() {
-        lightbox.classList.remove('active');
-        document.body.style.overflow = '';
-        document.body.style.position = '';
-        document.body.style.width = '';
-
-        console.log('gallery closed');
-      }
-
-      function navigate(direction) {
-        if (direction === 'next') {
-          currentIndex = (currentIndex + 1) % imageSources.length;
-          console.log('gallery navigation - next, now showing index:', currentIndex);
-        } else {
-          currentIndex = (currentIndex - 1 + imageSources.length) % imageSources.length;
-          console.log('gallery navigation - prev, now showing index:', currentIndex);
-        }
-        lightboxImg.src = imageSources[currentIndex];
-        updateCounter();
-      }
-
-      function updateCounter() {
-        lightboxCounter.textContent = `${currentIndex + 1} / ${imageSources.length}`;
-      }
-
-      // Lightbox controls
-      closeBtn.addEventListener('click', function() {
-        closeLightbox();
-      });
-      
-      prevBtn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        navigate('prev');
-      });
-      
-      nextBtn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        navigate('next');
-      });
-
-      // Click outside to close
-      lightbox.addEventListener('click', function(e) {
-        if (e.target === lightbox) {
-          closeLightbox();
-        }
-      });
-
-      // Keyboard navigation
-      document.addEventListener('keydown', function(e) {
-        if (!lightbox.classList.contains('active')) return;
-        
-        if (e.key === 'Escape') {
-          closeLightbox();
-        } else if (e.key === 'ArrowLeft') {
-          e.preventDefault();
-          navigate('prev');
-        } else if (e.key === 'ArrowRight') {
-          e.preventDefault();
-          navigate('next');
-        }
-      });
-
-      // Handle touch events for mobile
-      let touchStartX = 0;
-      let touchEndX = 0;
-      
-      lightbox.addEventListener('touchstart', function(e) {
-        touchStartX = e.changedTouches[0].screenX;
-      }, false);
-      
-      lightbox.addEventListener('touchend', function(e) {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-      }, false);
-      
-      function handleSwipe() {
-        const swipeThreshold = 50;
-        if (touchEndX < touchStartX - swipeThreshold) {
-          // Swipe left
-          navigate('next');
-          console.log('gallery swipe left detected');
-        }
-        if (touchEndX > touchStartX + swipeThreshold) {
-          // Swipe right
-          navigate('prev');
-          console.log('gallery swipe right detected');
-        }
-      }
-
-      // COLOUR CARDS MODALS
-      const colourCards = document.querySelectorAll('.clickableFigure');
-      const closeButtons = document.querySelectorAll('.close-modal');
-      const modals = document.querySelectorAll('.modal-overlay');
-
-      function openModal(modalId, element) {
-        const modal = document.getElementById(modalId);
-        if (modal) {
-          modal.classList.add('active');
-          document.body.style.overflow = 'hidden';
-          document.body.style.position = 'fixed';
-          document.body.style.width = '100%';
-          
-          // CONSOLE LOG - colour card clicked
-          if (element.closest('.card-trio')) {
-            const colourText = element.querySelector('h4')?.textContent || 'unknown';
-            console.log('card-trio section clicked - modal:', modalId, 'colour:', colourText);
-          }
-        }
-      }
-
-      function closeModal(modal) {
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
-        document.body.style.position = '';
-        document.body.style.width = '';
-        
-        // CONSOLE LOG - modal closed
-        console.log('modal closed:', modal.id);
-      }
-
-      colourCards.forEach(card => {
-        card.addEventListener('click', function(e) {
-          e.preventDefault();
-          const modalId = this.getAttribute('data-modal');
-          if (modalId) {
-            openModal(modalId, this);
-          }
-        });
-      });
-
-      closeButtons.forEach(button => {
-        button.addEventListener('click', function(e) {
-          e.stopPropagation();
-          const modal = this.closest('.modal-overlay');
-          if (modal) closeModal(modal);
-        });
-      });
-
-      modals.forEach(modal => {
-        modal.addEventListener('click', function(e) {
-          if (e.target === this) closeModal(this);
-        });
-      });
-
-      // Close modal with Escape key
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-          const openModal = document.querySelector('.modal-overlay.active');
-          if (openModal) {
-            closeModal(openModal);
-            // CONSOLE LOG - escape key
-            console.log('modal closed with Escape key:', openModal.id);
-          }
-          
-          // Also check for lightbox
-          if (lightbox.classList.contains('active')) {
-            closeLightbox();
-            console.log('gallery closed with Escape key');
-          }
-        }
-      });
-
-      const tempBadge = document.querySelector('.temp-badge');
-      if (tempBadge) {
-        tempBadge.addEventListener('click', function() {
-          console.log('The perfect egg button clicked - temperature info');
-        });
-      }
-
-      window.addEventListener('resize', function() {
-        // No action needed, CSS handles responsiveness
-      });
-      console.log('Gallery and modal system initialized with responsive modals');      
-    })();
-  </script>
+  <script src="./src/assets/js/custom.js"></script>
 </body>
 </html>
